@@ -158,11 +158,9 @@ def determine_critical_loc():
 
 def determine_critical(str_roll, int_roll):
     if (str_roll[0] == str_roll[1]) or (impale_trait and int_roll % 10 == 0):
-        if int_roll <= int_threshold:
-            st.write('Critical Success! See WFRP Rulebook p.174')
+        if int_roll <= int_threshold: 
             var = determine_critical_loc()
             st.write(f'{var}')
-                
         else:
             st.write('Critical Failure!')
             fumble()
@@ -204,9 +202,6 @@ def evaluate_dice(int_threshold, combat_bool, str_roll, int_roll):
             if dangerous_trait == True:
                 if (str_roll[0] or str_roll[1]) == ('9' or 9):
                     fumble()
-        else:
-            st.write('Enter in your Strenght Bonus.')
-            
         
 def determine_weapon():
     global strength_bonus
